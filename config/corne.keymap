@@ -22,9 +22,9 @@
                 default_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+// | CAPS |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | ENT  |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC(SQT)  |
+//                    | GUI | LWR | SPC |   |SPACE|SPACE | ALT |
                         bindings = <
 //   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
 //   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
@@ -34,7 +34,7 @@
    &kp TAB   &kp Q &kp W &kp E &kp R &lt 2 T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
    &kp CAPS  &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp RET
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &mt SQT ESC
-                &kp RALT &kp LGUI &kp RCTRL   &lt 1 RET  &lt 2 SPACE  &kp RSHFT
+                &kp RALT &kp LGUI &kp RCTRL   &lt 1 SPACE  &lt 2 SPACE  &kp RSHFT
                         >;
                 };
 
@@ -47,42 +47,42 @@
                         label = "SYMBOL";
                         bindings = <
    &kp TILDE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp DEL
-   &kp GRAVE &kp F1  &kp F2  &kp F3  &kp F4   &kp F5      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp F11
-   &kp LSHFT &kp F6  &kp F7  &kp F8  &kp F9  &kp F10      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp F12
-                    	     &trans     &mo 3     &trans             &trans     &trans            &trans
+   &kp GRAVE &kp F1  &kp F2  &kp F3  &kp F4   &kp F5       &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp F11
+   &kp LSHFT &kp F6  &kp F7  &kp F8  &kp F9  &kp F10       &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp F12
+                    	     &trans  &mo 3   &trans        &trans    &trans    &trans
                         >;
                 };
 
         NUMBER {
             // -----------------------------------------------------------------------------------------
-            // | ESC |  1  |  2  |  3  |  4  |  5  |   |  6   |  7   |  8   |  9   |  0   | DEL  |
-            // | SHF |  +  |  -  |  *  |  %  |  =  |   | LEFT | DOWN |  UP  | RGT  |  :   |      |
-            // | CTL |  _  |     |     |     |     |   | HOME | END  | PGUP | PGDN | INS  |      |
+            // |     |  1  |  2  |  3  |  4  |  5  |   |  6   |  7   |  8   |  9   |  0   | DEL  |
+            // |     |  +  |  -  |  *  |  %  |  =  |   | LEFT | DOWN |  UP  | RGT  |  :   |      |
+            // |     |  _  |     |     |     |     |   | HOME | END  | PGUP | PGDN | INS  |      |
             //                   |     | SET |     |   |      |     |     |
 
             label = "NUMBER";
             bindings = <
    &trans   &kp N1   &kp N2    &kp N3          &kp N4    &kp N5       &kp N6    &kp N7     &kp N8     &kp N9      &kp N0  &kp DEL
-   &kp CAPS &kp PLUS &kp MINUS &kp KP_MULTIPLY &kp PRCNT &kp EQUAL    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT   &kp COLON  &trans
-   &trans   &kp UNDER &trans  &trans  &trans  &trans                  &kp HOME  &kp END    &kp PG_UP  &kp PG_DN   &kp INS  &trans
-                           &trans  &mo 3   &trans            &trans     &trans     &trans
+   &trans   &kp PLUS &kp MINUS &kp KP_MULTIPLY &kp PRCNT &kp EQUAL    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT   &kp COLON  &trans
+   &trans   &kp UNDER &trans   &trans          &trans    &trans                 &kp HOME   &kp END    &kp PG_UP  &kp PG_DN   &kp INS  &trans
+                                    &trans  &mo 3   &trans            &trans    &trans     &trans
             >;
         };
         
 
         SETTING {
             // -----------------------------------------------------------------------------------------
-            // | RGB BRI+ | RGB SAT+ | RGB HUE+ | RGB ANI+ | * | RGB TOG |     |  BT1  | BT2 | BT3 | BT4 | BT5 | BT CLR |
-            // | RGB BRI- | RGB SAT- | RGB HUE- | RGB ANI- | * |         |     |       |     |     |     |     |        |
-            // |          |          |          |          | * |         |     | RESET |     |     |     |     |        |
+            // | * | RGB BRI+ | RGB SAT+ | RGB HUE+ | RGB ANI+ | RGB TOG |     |  BT1  | BT2 | BT3 | BT4 | BT5 | BT CLR |
+            // | * | RGB BRI- | RGB SAT- | RGB HUE- | RGB ANI- |         |     |       |     |     |     |     |        |
+            // | * |          |          |          |          |         |     | RESET | bootloader    |     |     |     |        |
             //                                  |          | * |         |     |       |     |     |
 
             label = "SETTING";
             bindings = <
- &rgb_ug RGB_BRI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_EFF   &none  &rgb_ug RGB_TOG          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_CLR
- &rgb_ug RGB_BRD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_EFR   &none            &none                 &none         &none         &none         &none  &out OUT_BLE  &out OUT_USB
-           &none            &none            &none            &none   &none            &none                &sys_reset   &bootloader         &none         &none         &none  &out OUT_TOG
-                                                             &trans  &trans           &trans                &trans        &trans        &trans
+        &none &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &rgb_ug RGB_TOG    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_CLR
+        &none &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &none              &none         &none         &none         &none  &out OUT_BLE  &out OUT_USB
+        &none &none           &none           &none           &none           &none              &sys_reset    &bootloader         &none         &none         &none  &out OUT_TOG
+                                              &trans          &trans          &trans             &trans        &trans        &trans
             >;
         };
 
